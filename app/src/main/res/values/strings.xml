@@ -8,4 +8,8 @@
     <string name="round_up_tip">Round up tip?</string>
     <string name="calculate">Calculate</string>
     <string name="tip_amount">Tip Amount</string>
+    <string name="textview">Textview</string>
+    <string name="amount">amount</string>
+    <string name="unit_2">Unit 2</string>
+    <string name="convert">convert</string>
 </resources>
