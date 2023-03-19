@@ -136,11 +136,6 @@
 
 
 package com.example.xmllayoutsforandroid
-//
-//import android.annotation.SuppressLint
-//import android.os.Bundle
-//import android.widget.*
-//import androidx.appcompat.app.AppCompatActivity
 
 import android.os.Bundle
 import android.view.View
@@ -149,6 +144,11 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.xmllayoutsforandroid.R
 
 
+/**
+ * TODO
+ *
+ * MainActivity class
+ */
 class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
     var conversionUnits: Array<String> = arrayOf("Cup", "Milliliter", "Litre","Gram","Kilogram")
@@ -158,6 +158,13 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
     var num : Int = 0
 
+    /**
+     * TODO
+     *
+     * onCreate method of app
+     *
+     * @param savedInstanceState
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -165,6 +172,9 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         val unitsOne : Spinner = findViewById(R.id.spinner2)
         val unitsTwo : Spinner = findViewById(R.id.spinner)
 
+        /**
+         * setOnItemSelectedListener for when single item from spinner is selected
+         */
         unitsOne.setOnItemSelectedListener(object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
                 parent: AdapterView<*>?,
@@ -204,8 +214,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         addToSpinner.setDropDownViewResource(
             android.R.layout.simple_spinner_dropdown_item)
 
-        // Set the ArrayAdapter (ad) data on the
-        // Spinner which binds data to spinner
+
         unitsOne.adapter = addToSpinner
         unitsTwo.adapter = addToSpinner
 
@@ -217,7 +226,9 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         val boxString: EditText = findViewById(R.id.amount)
 
 
-
+        /**
+         * btn to click to convert units
+         */
         buttonConvert.setOnClickListener({
             val amount = boxString.text.toString().toDouble()
             Show.text = convertUnits(SelectedString1,SelectedString2,amount);
@@ -225,12 +236,22 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
     }
 
+    /**
+     * TODO
+     *
+     * method that is used to convert between units
+     *
+     * @param unit1
+     * @param unit2
+     * @param value
+     * @return converted value as concatenated string for appropriate output
+     */
     fun convertUnits(unit1: String,unit2: String,value: Double): String {
 
         var convertedValue: Double = 0.0
 
 
-        convertedValue =  Math.round(fromGram(unit1,unit2,value) * 100.0) / 100.0
+        convertedValue =  Math.round(fromUnits(unit1,unit2,value) * 100.0) / 100.0
 
         return "${value.toString()} $unit1 is equal to ${convertedValue.toString()} $unit2"
 
@@ -239,7 +260,17 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
 //    "Gram","Kilogram","Pound","Ounce"
 
-    private fun fromGram(unit1: String,unit2: String,value: Double): Double {
+    /**
+     * TODO
+     *
+     * Method containing all the if-else logic for unit conversion
+     *
+     * @param unit1
+     * @param unit2
+     * @param value
+     * @return converted value
+     */
+    private fun fromUnits(unit1: String,unit2: String,value: Double): Double {
 
         var newValue : Double = 0.0
 
@@ -322,9 +353,6 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
 
         return newValue
-    }
-
-    private fun fromLiquid() {
     }
 
 
