@@ -136,6 +136,11 @@
 
 
 package com.example.xmllayoutsforandroid
+//
+//import android.annotation.SuppressLint
+//import android.os.Bundle
+//import android.widget.*
+//import androidx.appcompat.app.AppCompatActivity
 
 import android.os.Bundle
 import android.view.View
