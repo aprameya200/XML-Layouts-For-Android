@@ -1,7 +1,7 @@
 # Lab 2 - XML Layouts for Android
 ### Practice On Your Own Part
 
-Tip Calculator App
+Cooking unit converter App
 
 ## Instruction
 
