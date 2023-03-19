@@ -6,4 +6,4 @@ Tip Calculator App
 
 Enter the specified fields to calculate tip
 
-![](https://github.com/aprameya200/lab_1_DiceRollerApp/blob/Practice_On_Your_Own/Gifs/double_dice_roller.gif)
+![](https://github.com/aprameya200/XML-Layouts-For-Android/blob/tip_calculator/Gifs/tip%20calculator.gif)
